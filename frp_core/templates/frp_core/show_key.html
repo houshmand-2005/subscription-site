@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>key</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body style="direction: rtl;background-color: rgb(52, 64, 73);padding-left: 10%;padding-right: 10%;">
+  <br>
+  <div class="alert alert-success" role="alert">
+    پرداخت با موفقیت انجام شد!
+  </div>
+  <div class="card">
+    <div class="card-header">
+      مشخصات اشتراک
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>کلید شما:</p>
+        <p style="direction: ltr;">
+            <textarea style="background-color: rgb(218, 245, 246);font-family: Arial, Helvetica, sans-serif;font-size: medium;color: rgb(196, 93, 114);" id="myInput" cols="80" rows="2">{{key}}</textarea>
+        </p>
+        <button type="submit" class="btn btn-primary mb-3" onclick="myFunction()">
+          کپی کد اشتراک
+        </button>
+        <footer class="blockquote-footer">مدت زمان اشتراک شما {{id_subtype}} روز</footer>
+      </blockquote>
+    </div>
+    <center>
+      <a href="/login"><button type="button" class="btn btn-outline-primary">رفتن به پنل کاربری</button></a>
+    </center>
+  </div>
+</body>
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    alert("کد اشتراک کپی شد");
+  }
+</script>
+
+</html>
